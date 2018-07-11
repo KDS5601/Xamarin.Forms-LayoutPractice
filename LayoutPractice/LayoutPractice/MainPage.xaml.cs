@@ -25,7 +25,12 @@ namespace LayoutPractice
             StackButton.Clicked += async (object sender, EventArgs e) =>
             await Navigation.PushAsync(new StackPage());
 
+            LayoutButton GridButton = new LayoutButton("Grid");
+            GridButton.Clicked += async (object sender, EventArgs e) =>
+            await Navigation.PushAsync(new GridPage());
+
             ContentStack.Children.Add(StackButton);
+            ContentStack.Children.Add(GridButton);
         }
 
         class LayoutButton : Button
@@ -35,6 +40,7 @@ namespace LayoutPractice
                 HeightRequest = 50;
                 WidthRequest = 200;
                 Text = Name_p;
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button));
                 BackgroundColor = Color.Aqua;
             }
         }

@@ -43,6 +43,7 @@
                 <Button
                     x:Name="BackButton"
                     Text="GoBack"
+                    FontSize="Large"
                     BackgroundColor="#0fe0ff"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
