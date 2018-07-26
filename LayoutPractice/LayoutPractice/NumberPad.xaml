@@ -33,9 +33,10 @@
             </Grid>
             <Button
                 x:Name="backButton"
-                HeightRequest="45"
+                HeightRequest="30"
                 VerticalOptions="FillAndExpand"
                 Text="Go Back"
+                FontSize="Large"
                 />
         </StackLayout>
     </ContentPage.Content>
