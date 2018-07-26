@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LayoutPractice.NumberPad">
+    <ContentPage.Content>
+        <StackLayout
+        Orientation="Vertical"
+        VerticalOptions="FillAndExpand">
+            <Label
+            x:Name="inputLabel"
+            BackgroundColor="WhiteSmoke"
+            TextColor="Black"
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="End"
+            FontSize="Large"
+            HeightRequest="40"/>            
+            <Grid 
+            x:Name="inputNumbersGrid"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            MinimumHeightRequest="400">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Button
+                x:Name="backButton"
+                HeightRequest="45"
+                VerticalOptions="FillAndExpand"
+                Text="Go Back"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

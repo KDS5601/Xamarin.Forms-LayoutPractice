@@ -26,29 +26,18 @@ namespace LayoutPractice
 
         private async void ChangeColor()
         {
-            Label1.BackgroundColor = GetRandomColor();
+            Label1.BackgroundColor = FuntionClass.GetRandomColor();
             await Task.Delay(50);
-            Label2.BackgroundColor = GetRandomColor();
+            Label2.BackgroundColor = FuntionClass.GetRandomColor();
             await Task.Delay(50);
-            Label3.BackgroundColor = GetRandomColor();
+            Label3.BackgroundColor = FuntionClass.GetRandomColor();
             await Task.Delay(50);
-            ChangeButton.BackgroundColor = GetRandomColor();
+            ChangeButton.BackgroundColor = FuntionClass.GetRandomColor();
             await Task.Delay(50);
-            BackButton.BackgroundColor = GetRandomColor();
+            BackButton.BackgroundColor = FuntionClass.GetRandomColor();
             await Task.Delay(50);
         }
 
-        private Color GetRandomColor ()
-        {
-            Random RandomNumber = new Random();
 
-            int RandomRed = RandomNumber.Next(0, 255);
-            int RandomGreen = RandomNumber.Next(0, 255);
-            int RandomBlue = RandomNumber.Next(0, 255);
-
-            Color ReturnColor = Color.FromRgb(RandomRed, RandomGreen, RandomBlue);
-
-            return ReturnColor;
-        }
     }
 }

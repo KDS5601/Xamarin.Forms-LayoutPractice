@@ -19,7 +19,17 @@ namespace LayoutPractice
 
             BackButton.Clicked += async (sender, e) =>
             await Navigation.PopAsync();
-            
+
+            addButton.Clicked += (sender, e) =>
+            {
+                childrenStack.Children.Add(new Label
+                {
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
+                    VerticalOptions = LayoutOptions.FillAndExpand,
+                    BackgroundColor = FuntionClass.GetRandomColor()
+                }
+                );
+            };
         }
     }
 }

@@ -3,42 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LayoutPractice.StackPage">
     <ContentPage.Content>
-
         <StackLayout
             Orientation="Vertical"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
-            AbsoluteLayout.LayoutFlags="All">
+            Spacing="0">
             <StackLayout
                 Orientation="Horizontal"
                 HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand">
+                VerticalOptions="FillAndExpand"
+                Spacing="0">
                 <Label
                     BackgroundColor="#00ffff"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     ></Label>
-                <Label
-                    BackgroundColor="#ff00ff"
+                <Button
+                    x:Name="addButton"
+                    BackgroundColor="#000000"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
-                    ></Label>
+                    Text="Add more child"
+                    TextColor="#ffffff"
+                    ></Button>
                 <Label
                     BackgroundColor="#ffff00"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     ></Label>
-
             </StackLayout>
             <StackLayout
                 Orientation="Horizontal"
                 HorizontalOptions="Fill"
-                VerticalOptions="FillAndExpand">
+                VerticalOptions="FillAndExpand"
+                Spacing="0">
                 <Label
                     BackgroundColor="#00ff00"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
-                    
+                    VerticalOptions="FillAndExpand"                    
                     ></Label>
                 <Button
                     x:Name="BackButton"
@@ -46,37 +48,20 @@
                     FontSize="Large"
                     BackgroundColor="#0fe0ff"
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
-                    
+                    VerticalOptions="FillAndExpand"                    
                     ></Button>
                 <Label
                     BackgroundColor="#ff0000"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     ></Label>
-
             </StackLayout>
             <StackLayout
+                x:Name="childrenStack"
                 Orientation="Horizontal"
                 HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand">
-                <Label
-                    BackgroundColor="#e0ff0e"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
-                    Margin="0"
-                    ></Label>
-                <Label
-                    BackgroundColor="#e0e0ff"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
-                    ></Label>
-                <Label
-                    BackgroundColor="#ffe0e0"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
-                    ></Label>
-
+                VerticalOptions="FillAndExpand"
+                Spacing="0">
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

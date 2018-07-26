@@ -29,8 +29,18 @@ namespace LayoutPractice
             GridButton.Clicked += async (object sender, EventArgs e) =>
             await Navigation.PushAsync(new GridPage());
 
+            LayoutButton ListViewButton = new LayoutButton("ListViewPage");
+            ListViewButton.Clicked += async (object sender, EventArgs e) =>
+            await Navigation.PushAsync(new ListViewPage());
+
+            LayoutButton NumberPadButton = new LayoutButton("NumberPad");
+            NumberPadButton.Clicked += async (object sender, EventArgs e) =>
+            await Navigation.PushAsync(new NumberPad());
+
             ContentStack.Children.Add(StackButton);
             ContentStack.Children.Add(GridButton);
+            ContentStack.Children.Add(ListViewButton);
+            ContentStack.Children.Add(NumberPadButton);
         }
 
         class LayoutButton : Button
