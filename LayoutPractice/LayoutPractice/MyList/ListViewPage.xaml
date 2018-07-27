@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LayoutPractice.ListViewPage">
+    <ListView x:Name="MyListView"
+            ItemsSource="{Binding Items}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement">
+        <!--Built in Cells-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout
+                        Orientation="Horizontal"
+                        HeightRequest="40"
+                        HorizontalOptions="FillAndExpand"
+                        Spacing="0">
+                        <Label
+                            HeightRequest="40"
+                            WidthRequest="40"
+                            BackgroundColor="{Binding ranColor}"/>
+                        <StackLayout
+                            Orientation="Vertical"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                            Spacing="0">
+                            <Label
+                                Text="{Binding name}"/>
+                            <Label
+                                Text="{Binding context}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+        <!--Custom View Cells-->
+        <!--
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout>
+            <Label Text="{Binding Text}" 
+                   Style="{DynamicResource ListItemTextStyle}" />
+            <Label Text="{Binding Detail}" 
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    -->
+    </ListView>
+</ContentPage>

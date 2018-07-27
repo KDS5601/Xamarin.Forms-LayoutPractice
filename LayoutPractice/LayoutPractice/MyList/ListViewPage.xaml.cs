@@ -12,22 +12,18 @@ namespace LayoutPractice
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListViewPage : ContentPage
     {
-        public ObservableCollection<string> Items { get; set; }
+        public ObservableCollection<MiniViewModel> Items { get; set; }
 
         public ListViewPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
 
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-			
-			MyListView.ItemsSource = Items;
+            Items = new ObservableCollection<MiniViewModel>();
+
+            Items.Add(new MiniViewModel { ranColor = FuntionClass.GetRandomColor(), name = "name1", context = "context1" });
+
+            MyListView.ItemsSource = Items;
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -40,5 +36,12 @@ namespace LayoutPractice
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
         }
+    }
+
+    public struct MiniViewModel
+    {
+        public Color ranColor { get; set; }
+        public string name { get; set; }
+        public string context { get; set; }
     }
 }
