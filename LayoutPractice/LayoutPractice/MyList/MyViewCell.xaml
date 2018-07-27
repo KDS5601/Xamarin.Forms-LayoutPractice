@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LayoutPractice.MyViewCell">
+  <ViewCell.View>
+        <StackLayout
+            Orientation="Horizontal"
+            HeightRequest="40"
+            HorizontalOptions="FillAndExpand"
+            Spacing="0">
+            <Label
+                HeightRequest="40"
+                WidthRequest="40"
+                BackgroundColor="{Binding RanColor}"/>
+            <StackLayout
+                Orientation="Vertical"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                Spacing="0">
+                <Label
+                    Text="{Binding Name}"/>
+                <Label
+                    Text="{Binding Context}"/>
+            </StackLayout>
+        </StackLayout>
+  </ViewCell.View>
+</ViewCell>

@@ -18,10 +18,24 @@ namespace LayoutPractice
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            backButton.Clicked += async (sender, e) =>
+            await Navigation.PopAsync();
 
             Items = new ObservableCollection<MiniViewModel>();
 
-            Items.Add(new MiniViewModel { ranColor = FuntionClass.GetRandomColor(), name = "name1", context = "context1" });
+            EnterButton.Clicked += (sender, e) =>
+            {
+                string name;
+                string context;
+
+                name = NameEntry.Text;
+                context = ContextEntry.Text;
+
+                Items.Add(new MiniViewModel { RanColor = FuntionClass.GetRandomColor(), Name = name, Context = context });
+
+                NameEntry.Text = "기본이름";
+                ContextEntry.Text = "기본값";
+            };
 
             MyListView.ItemsSource = Items;
         }
@@ -40,8 +54,8 @@ namespace LayoutPractice
 
     public struct MiniViewModel
     {
-        public Color ranColor { get; set; }
-        public string name { get; set; }
-        public string context { get; set; }
+        public Color RanColor { get; set; }
+        public string Name { get; set; }
+        public string Context { get; set; }
     }
 }

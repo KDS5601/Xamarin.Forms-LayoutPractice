@@ -2,52 +2,82 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LayoutPractice.ListViewPage">
-    <ListView x:Name="MyListView"
+    <StackLayout
+        Orientation="Vertical">
+        <StackLayout
+            Orientation="Horizontal"
+            Spacing="0"
+            HorizontalOptions="FillAndExpand">
+            <StackLayout
+                Orientation="Vertical"
+                Spacing="0"
+                HorizontalOptions="FillAndExpand">
+                <StackLayout
+                    Orientation="Horizontal"
+                    Spacing="0">
+                    <Label
+                        Text="이름"
+                        VerticalOptions="Center"
+                        WidthRequest="40"/>
+                    <Entry
+                        x:Name="NameEntry"
+                        HorizontalOptions="FillAndExpand"
+                        Text="기본이름"/>
+                </StackLayout>
+                <StackLayout
+                    Orientation="Horizontal"
+                    Spacing="0">
+                    <Label
+                        Text="내용"
+                        VerticalOptions="Center"
+                        WidthRequest="40"/>
+                    <Entry
+                        x:Name="ContextEntry"
+                        HorizontalOptions="FillAndExpand"
+                        Text="기본값"/>
+                </StackLayout>
+            </StackLayout>
+            <Button
+                x:Name="EnterButton"
+                Text="입력"
+                HeightRequest="40"
+                WidthRequest="60"/>
+        </StackLayout>
+        <ListView 
+            x:Name="MyListView"
             ItemsSource="{Binding Items}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
-        <!--Built in Cells-->
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout
-                        Orientation="Horizontal"
-                        HeightRequest="40"
-                        HorizontalOptions="FillAndExpand"
-                        Spacing="0">
-                        <Label
-                            HeightRequest="40"
-                            WidthRequest="40"
-                            BackgroundColor="{Binding ranColor}"/>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
                         <StackLayout
-                            Orientation="Vertical"
-                            HorizontalOptions="Fill"
-                            VerticalOptions="Fill"
+                            Orientation="Horizontal"
+                            HeightRequest="40"
+                            HorizontalOptions="FillAndExpand"
                             Spacing="0">
                             <Label
-                                Text="{Binding name}"/>
-                            <Label
-                                Text="{Binding context}"/>
+                                HeightRequest="40"
+                                WidthRequest="40"
+                                BackgroundColor="{Binding RanColor}"/>
+                            <StackLayout
+                                Orientation="Vertical"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Fill"
+                                Spacing="0">
+                                <Label
+                                    Text="{Binding Name}"/>
+                                <Label
+                                    Text="{Binding Context}"/>
+                            </StackLayout>
                         </StackLayout>
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-
-        <!--Custom View Cells-->
-        <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    -->
-    </ListView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            x:Name="backButton"
+            Text="Go Back"
+            HeightRequest="40"/>
+    </StackLayout>
 </ContentPage>

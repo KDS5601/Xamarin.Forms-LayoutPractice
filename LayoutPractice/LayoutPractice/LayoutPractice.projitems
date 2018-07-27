@@ -30,7 +30,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)MyViewCell.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)MyList\MyViewCell.xaml.cs">
       <DependentUpon>MyViewCell.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -78,7 +78,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Class\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MyViewCell.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MyList\MyViewCell.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
