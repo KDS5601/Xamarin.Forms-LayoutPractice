@@ -43,9 +43,14 @@ namespace LayoutPractice
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (e.Item == null)
+            {
+                await DisplayAlert("Item Tapped", "nothing happen", "OK");
                 return;
+            }
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            MiniViewModel senderView = (MiniViewModel)e.Item;
+
+            await DisplayAlert("Item Tapped", senderView.Name , "OK");
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
