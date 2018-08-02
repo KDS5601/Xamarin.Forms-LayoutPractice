@@ -23,6 +23,12 @@
                         <Label
                             x:Name="NumberOnlyLabel"/>
                     </StackLayout>
+                    <Editor
+                        x:Name="myEditor"
+                        HorizontalOptions="FillAndExpand"/>
+                    <Label
+                        x:Name="editorLabel"
+                        HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
             </ScrollView>
             <Button
