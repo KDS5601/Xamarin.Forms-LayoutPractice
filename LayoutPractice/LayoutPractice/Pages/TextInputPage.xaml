@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LayoutPractice.TextInputPage">
+    <ContentPage.Content>
+        <StackLayout
+            Orientation="Vertical">
+            <ScrollView
+                Orientation="Vertical">
+                <StackLayout
+                    Orientation="Vertical">
+                    <Label
+                        Text="숫자전용 Entry"/>
+                    <StackLayout
+                        Orientation="Horizontal">
+                        <Entry
+                            x:Name="NumberOnlyEntry"
+                            HorizontalOptions="FillAndExpand"
+                            Keyboard="Numeric"
+                            MaxLength="10"
+                            IsSpellCheckEnabled="false"
+                            Placeholder="숫자만 입력가능"/>
+                        <Label
+                            x:Name="NumberOnlyLabel"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <Button
+                x:Name="backButton"
+                HeightRequest="30"
+                VerticalOptions="FillAndExpand"
+                Text="Go Back"
+                FontSize="Large"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

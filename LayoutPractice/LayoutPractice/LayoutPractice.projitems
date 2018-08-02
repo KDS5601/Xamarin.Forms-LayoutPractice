@@ -18,7 +18,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Class\FuntionClass.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)GridPage.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\GridPage.xaml.cs">
       <DependentUpon>GridPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -26,7 +26,7 @@
       <DependentUpon>ListViewPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -34,29 +34,33 @@
       <DependentUpon>MyViewCell.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)NumberPad.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\NumberPad.xaml.cs">
       <DependentUpon>NumberPad.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)StackPage.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\StackPage.xaml.cs">
       <DependentUpon>StackPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\TextInputPage.xaml.cs">
+      <DependentUpon>TextInputPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)StackPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\StackPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)GridPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\GridPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -68,7 +72,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NumberPad.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\NumberPad.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -76,9 +80,16 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)MyList\" />
     <Folder Include="$(MSBuildThisFileDirectory)Class\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MyList\MyViewCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\TextInputPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
