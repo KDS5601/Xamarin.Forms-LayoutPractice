@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using LayoutPractice.MyList;
+
 namespace LayoutPractice
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -42,25 +44,30 @@ namespace LayoutPractice
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            if (e.Item == null)
-            {
-                await DisplayAlert("Item Tapped", "nothing happen", "OK");
-                return;
-            }
+            //sender는 구독한놈 ??
+            //e는 매개변수
+            //e.Group은 들어온 클래스
 
-            MiniViewModel senderView = (MiniViewModel)e.Item;
+            MiniViewModel m = e.Group as MiniViewModel;
 
-            await DisplayAlert("Item Tapped", senderView.Name , "OK");
+            await Navigation.PushAsync(new InListPage(m.ID, m.Name, m.Context));
 
-            //Deselect Item
             ((ListView)sender).SelectedItem = null;
+            e = null;
         }
     }
 
-    public struct MiniViewModel
+    public class MiniViewModel
     {
+        static int IDCount = 0;
         public Color RanColor { get; set; }
         public string Name { get; set; }
         public string Context { get; set; }
+        public int ID { get; set; }
+
+        public MiniViewModel()
+        {
+            ID = IDCount++;
+        }
     }
 }

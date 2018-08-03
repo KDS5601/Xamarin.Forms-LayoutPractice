@@ -18,6 +18,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Class\FuntionClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MyList\InListPage.xaml.cs">
+      <DependentUpon>InListPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\GridPage.xaml.cs">
       <DependentUpon>GridPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -78,7 +82,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)MyList\" />
     <Folder Include="$(MSBuildThisFileDirectory)Class\" />
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
   </ItemGroup>
@@ -90,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\TextInputPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MyList\InListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
