@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using LayoutPractice.Pages;
+using LayoutPractice.MyList;
+
 namespace LayoutPractice
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]

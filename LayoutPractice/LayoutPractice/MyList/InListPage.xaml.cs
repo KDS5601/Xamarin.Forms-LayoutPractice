@@ -19,9 +19,9 @@ namespace LayoutPractice.MyList
             backButton.Clicked += async (sender, e) =>
             await Navigation.PopAsync();
 
-            idLabel.Text = id.ToString();
-            nameLabel.Text = name;
-            contextLabel.Text = context;
+            idLabel.Text = "ID : " + id.ToString();
+            nameLabel.Text = "Name : " + name;
+            contextLabel.Text = "context : " + context;
         }
     }
 }

@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using LayoutPractice.MyList;
-
-namespace LayoutPractice
+namespace LayoutPractice.MyList
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListViewPage : ContentPage
@@ -23,7 +21,7 @@ namespace LayoutPractice
             backButton.Clicked += async (sender, e) =>
             await Navigation.PopAsync();
 
-            Items = new ObservableCollection<MiniViewModel>();
+            Items = new ObservableCollection<MiniViewModel> { };
 
             EnterButton.Clicked += (sender, e) =>
             {
@@ -46,14 +44,20 @@ namespace LayoutPractice
         {
             //sender는 구독한놈 ??
             //e는 매개변수
-            //e.Group은 들어온 클래스
+            //e.Group은 들어온 Item의 첫번째 형
+            //e.Item은 들어온 Item
 
-            MiniViewModel m = e.Group as MiniViewModel;
+            if (e.Item == null)
+            {
+                return;
+            }
 
-            await Navigation.PushAsync(new InListPage(m.ID, m.Name, m.Context));
+            MiniViewModel m = e.Item as MiniViewModel;
 
             ((ListView)sender).SelectedItem = null;
             e = null;
+
+            await Navigation.PushAsync(new InListPage(m.ID, m.Name, m.Context));
         }
     }
 
@@ -70,4 +74,5 @@ namespace LayoutPractice
             ID = IDCount++;
         }
     }
+
 }
