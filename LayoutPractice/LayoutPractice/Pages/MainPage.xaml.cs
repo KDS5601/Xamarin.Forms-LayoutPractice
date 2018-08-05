@@ -12,13 +12,13 @@ using LayoutPractice.MyList;
 
 namespace LayoutPractice
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MainPage : ContentPage
-	{
-		public MainPage ()
-		{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MainPage : ContentPage
+    {
+        public MainPage()
+        {
             NavigationPage.SetHasNavigationBar(this, false);
-            InitializeComponent ();
+            InitializeComponent();
 
             StackLayout ContentStack = new StackLayout();
             Content = ContentStack;
@@ -29,11 +29,13 @@ namespace LayoutPractice
             ContentStack.Children.Add(new LayoutButton("ListViewPage", new ListViewPage()));
             ContentStack.Children.Add(new LayoutButton("NumberPad", new NumberPad()));
             ContentStack.Children.Add(new LayoutButton("TextInput", new TextInputPage()));
+            ContentStack.Children.Add(new LayoutButton("WebView", new WebViewPage()));
+
         }
 
         class LayoutButton : Button
         {
-            public LayoutButton (string Name_p, Page page)
+            public LayoutButton(string Name_p, Page page)
             {
                 HeightRequest = 50;
                 WidthRequest = 200;
@@ -45,5 +47,5 @@ namespace LayoutPractice
                 await Navigation.PushAsync(page);
             }
         }
-	}
+    }
 }

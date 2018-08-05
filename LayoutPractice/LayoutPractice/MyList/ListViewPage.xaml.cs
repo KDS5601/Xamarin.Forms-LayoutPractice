@@ -49,6 +49,7 @@ namespace LayoutPractice.MyList
 
             if (e.Item == null)
             {
+                await DisplayAlert("경고", "아이템이 감지되지 않습니다.", "닫기");
                 return;
             }
 

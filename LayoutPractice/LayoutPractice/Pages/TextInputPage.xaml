@@ -25,6 +25,8 @@
                     </StackLayout>
                     <Editor
                         x:Name="myEditor"
+                        Keyboard="Text"
+                        HeightRequest="100"                        
                         HorizontalOptions="FillAndExpand"/>
                     <Label
                         x:Name="editorLabel"
