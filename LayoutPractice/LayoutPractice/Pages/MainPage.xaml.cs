@@ -30,7 +30,7 @@ namespace LayoutPractice
             ContentStack.Children.Add(new LayoutButton("NumberPad", new NumberPad()));
             ContentStack.Children.Add(new LayoutButton("TextInput", new TextInputPage()));
             ContentStack.Children.Add(new LayoutButton("WebView", new WebViewPage()));
-
+            ContentStack.Children.Add(new LayoutButton("MapPage", new MapPage()));
         }
 
         class LayoutButton : Button
