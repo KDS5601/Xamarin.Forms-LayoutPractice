@@ -21,7 +21,7 @@ namespace LayoutPractice.UWP
         {
             this.InitializeComponent();
 
-            Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
+            Xamarin.FormsMaps.Init("AmvLODUvhRoAcKTCLYRhkz4oxGxRo5-iCdLxAYHpPpHlp6uOY5u_qMbzc4BQ_aKi");
 
             LoadApplication(new LayoutPractice.App());
         }

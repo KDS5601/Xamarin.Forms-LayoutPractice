@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms.Maps;
 
 namespace LayoutPractice.Pages
 {
@@ -18,7 +19,6 @@ namespace LayoutPractice.Pages
             InitializeComponent();
             backButton.Clicked += async (sender, e) =>
             await Navigation.PopAsync();
-
 
         }
 	}
